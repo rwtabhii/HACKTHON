@@ -43,7 +43,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-black/30"></div>
 
             {/* Hero Content – exact positioning preserved */}
-            <div className="relative z-10 flex flex-row items-stretch gap-12 lg:gap-16 w-full min-h-screen px-6 py-16 max-w-7xl mx-auto">
+            <div className="relative z-10 flex flex-col  sm:flex-row items-stretch gap-12 lg:gap-16 w-full min-h-screen px-6 py-16 max-w-7xl mx-auto">
                 {/* Left side: Image and headings */}
                 <div className="flex-1 flex flex-col items-start w-full mt-30 relative">
                     {/* Use responsive classes that keep the original look on desktop, but prevent overflow on mobile */}
@@ -92,7 +92,7 @@ const Hero = () => {
                 </div>
 
                 {/* Right side: Register button – unchanged */}
-                <div className="flex-1 flex flex-col w-full">
+                <div className="flex-1 flex flex-wrap flex-col w-full">
                     <div className="mt-auto ml-auto mb-15">
                         <CommonButton
                             bgClass="bg-[linear-gradient(131.57deg,#7C3AED_2.28%,#A78BFA_53.69%,#EEE7FB_150%)]"

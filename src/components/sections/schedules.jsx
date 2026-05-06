@@ -16,7 +16,7 @@ const Schedules = () => {
           Hackathon Schedule
         </h2>
         
-        <div className="flex flex-col md:flex-row gap-6">
+        <div className="flex flex-wrap flex-col md:flex-row gap-6">
           {scheduleData.map((item) => (
             <ScheduleItem 
               key={item.id}

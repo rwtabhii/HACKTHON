@@ -89,7 +89,7 @@ const About = () => {
                             >
                                 WHO CAN PARTICIPATE?
                             </h2>
-                            <div className="space-y-2 text-white text-base sm:text-lg flex items-center justify-around">
+                            <div className="space-y-2 text-white text-base sm:text-lg flex flex-wrap  items-center justify-around">
                                 <div className={styles.participantCard}>
                                     <h4>Undergraduate<br />Students</h4>
                                 </div>
@@ -106,24 +106,27 @@ const About = () => {
                         </div>
 
                         {/* WHAT IS THE HACKATHON? section */}
-                        <div className="flex justify-around mt-30">
+                        <div className="flex flex-wrap justify-around mt-30">
                             <div className={styles.leftPanel}>
                                 <div className={styles.blurCircleLeft} />
-                                <div className="flex flex-col w-150">
+                                <div className="flex flex-col max-w-md">
                                     <h3 className="text-white text-xl sm:text-3xl  mb-16">WHAT IS THE <br />HACKATHON?</h3>
                                     <p className="text-white text-base sm:text-lg leading-relaxed">
                                         The Lorem Ipsum Innovation Hackathon is a flagship event crafted to uncover pioneering ideas in science, technology, and system design. As technological advancements accelerate globally, this initiative aims to bridge academic knowledge with practical implementation.
                                     </p>
-                                    <p className="text-white text-base sm:text-lg leading-relaxed mt-4 mb-20">
+
+                                    <p className="text-white text-base sm:text-lg leading-relaxed mt-4 mb-20 break-words sm:break-words">
                                         Participants will work on challenge statements designed by leading R&D units, applying theoretical expertise to build innovative prototypes and solutions with potential real-world application.
                                     </p>
                                     <p className="text-white text-base sm:text-lg leading-relaxed tracking-wide">Submission Closing In:</p>
                                     {/* Countdown timer */}
-                                    <div className="flex justify-between mt-6">
+                                    <div className="flex flex-col sm:flex-row flex-wrap justify-start sm:justify-between items-start sm:items-center gap-4 mt-2">
                                         <CommonButton bgClass={styles.countdown}>
-                                            {countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s</CommonButton>
+                                            {countdown.days}d {countdown.hours}h {countdown.minutes}m {countdown.seconds}s
+                                        </CommonButton>
                                         <CommonButton bgClass={styles.register}>
-                                            Register Now</CommonButton>
+                                            Register Now
+                                        </CommonButton>
                                     </div>
                                 </div>
                             </div>
@@ -192,22 +195,22 @@ const About = () => {
                     </h3>
 
                     {/* Three column layout: left (2 cards) | center (astronaut) | right (2 cards) */}
-                    <div className="flex flex-col lg:flex-row justify-between items-center gap-8 w-full">
+                    <div className="flex flex-col lg:flex-row justify-between items-center gap-8 lg:gap-4 xl:gap-8 w-full lg-w-80">
 
                         {/* ========== LEFT COLUMN – two cards aligned left ========== */}
-                        <div className="relative bg-[#7c3aed] w-full lg:w-auto max-w-md py-6 px-12 md:px-20 text-right overflow-visible z-10">
-                            <div className="space-y-16 relative z-10">
+                        <div className="relative bg-[#7c3aed] w-full md:w-100 lg:w-auto lg:max-w-sm xl:max-w-md py-6 px-8 md:px-12 xl:px-20 text-right overflow-visible z-10">
+                            <div className="space-y-12 lg:space-y-8 xl:space-y-16 relative z-10">
                                 {/* Card 1: Mentorship */}
                                 <div className="max-w-md ml-auto">
-                                    <h4 className="text-white text-xl font-bold mb-4">Mentorship from Experts</h4>
-                                    <p className="text-white/90 text-xl leading-relaxed">
+                                    <h4 className="text-white text-lg lg:text-base xl:text-xl font-bold mb-3 lg:mb-2 xl:mb-4">Mentorship from Experts</h4>
+                                    <p className="text-white/90 text-base lg:text-sm xl:text-xl leading-relaxed lg:leading-tight xl:leading-relaxed">
                                         Gain invaluable insights and guidance from experienced technologists and domain experts.
                                     </p>
                                 </div>
                                 {/* Card 2: Networking */}
                                 <div className="max-w-md ml-auto">
-                                    <h4 className="text-white text-xl font-bold mb-4">Networking</h4>
-                                    <p className="text-white/90 text-xl leading-relaxed">
+                                    <h4 className="text-white text-lg lg:text-base xl:text-xl font-bold mb-3 lg:mb-2 xl:mb-4">Networking</h4>
+                                    <p className="text-white/90 text-base lg:text-sm xl:text-xl leading-relaxed lg:leading-tight xl:leading-relaxed">
                                         Connect with peers, professionals, and innovation leaders from across the nation.
                                     </p>
                                 </div>
@@ -220,7 +223,7 @@ const About = () => {
                         </div>
 
                         {/* ========== CENTER COLUMN – multi‑ring astronaut (floating) ========== */}
-                        <div className="flex justify-center items-center shrink-0">
+                        <div className="flex justify-center items-center shrink-0 scale-90 lg:scale-75 xl:scale-100">
                             <div className={styles.astronautCenter}>
                                 <div className={styles.astronautMultiRingContainer}>
                                     {/* Concentric rings (low opacity, no animation) - now uncommented */}
@@ -240,19 +243,19 @@ const About = () => {
                         </div>
 
                         {/* ========== RIGHT COLUMN – two cards aligned right ========== */}
-                        <div className="relative bg-[#7c3aed] w-full lg:w-auto max-w-md py-6 px-12 md:px-20 text-left overflow-visible">
-                            <div className="space-y-16 relative z-10">
+                        <div className="relative bg-[#7c3aed] w-full sm:w-100 lg:w-auto lg:max-w-sm xl:max-w-md py-6 px-8 md:px-12 xl:px-20 text-left overflow-visible">
+                            <div className="space-y-12 lg:space-y-8 xl:space-y-16 relative z-10">
                                 {/* Card 3: Internship */}
                                 <div className="max-w-md ml-auto">
-                                    <h4 className="text-white text-xl font-bold mb-4">Internship Opportunities</h4>
-                                    <p className="text-white/90 text-xl leading-relaxed">
+                                    <h4 className="text-white text-lg lg:text-base xl:text-xl font-bold mb-3 lg:mb-2 xl:mb-4">Internship Opportunities</h4>
+                                    <p className="text-white/90 text-base lg:text-sm xl:text-xl leading-relaxed lg:leading-tight xl:leading-relaxed">
                                         Stand a chance to secure internships at top institutions and innovation labs.
                                     </p>
                                 </div>
                                 {/* Card 4: Real-World Impact */}
                                 <div className="max-w-md ml-auto">
-                                    <h4 className="text-white text-xl font-bold mb-4">Real-World Impact</h4>
-                                    <p className="text-white/90 text-xl leading-relaxed">
+                                    <h4 className="text-white text-lg lg:text-base xl:text-xl font-bold mb-3 lg:mb-2 xl:mb-4">Real-World Impact</h4>
+                                    <p className="text-white/90 text-base lg:text-sm xl:text-xl leading-relaxed lg:leading-tight xl:leading-relaxed">
                                         Contribute to meaningful challenges that aim to improve lives and systems at scale.
                                     </p>
                                 </div>

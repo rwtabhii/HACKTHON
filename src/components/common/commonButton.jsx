@@ -13,7 +13,7 @@ const CommonButton = ({
       onClick={onClick}
       className={`
         font-manrope
-        relative w-55 h-16
+         relative w-full sm:w-auto min-w-[180px] h-16 px-6
          text-white text-xl
          font-normal
          bg-linear-to-r 

@@ -218,7 +218,7 @@
   transform: translateY(-50%);
   width: 38rem;
   height: 31rem;
- background-color: #7C3AED;
+  background-color: #7C3AED;
   filter: blur(60px);
   pointer-events: none;
   z-index: -1;
@@ -265,8 +265,25 @@
 /* Blurred circle background – left side, circular format */
 .blurCircleRight {
   position: absolute;
+  top: 50%;
+  right: -5rem;
+  transform: translateY(-50%);
+  width: 25rem;
+  height: 35rem;
+  background-color: #7C3AED;
+  border-radius: 40rem 0 0 40rem;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+/* Responsive: smaller circle on tablets/mobiles */
+@media (max-width :1469px) {
+  .blurCircleRight {
+    position: absolute;
     top: 50%;
-    right: -5rem;
+    right: -3rem;
     transform: translateY(-50%);
     width: 25rem;
     height: 35rem;
@@ -276,9 +293,43 @@
     pointer-events: none;
     z-index: -1;
     opacity: 0.3;
+  }
 }
 
-/* Responsive: smaller circle on tablets/mobiles */
+@media (max-width :1341px) {
+  .blurCircleRight {
+    position: absolute;
+    top: 50%;
+    right: -2rem;
+    transform: translateY(-50%);
+    width: 25rem;
+    height: 35rem;
+    background-color: #7C3AED;
+    border-radius: 40rem 0 0 40rem;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.3;
+  }
+}
+
+@media (max-width :1271px) {
+  .blurCircleRight {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: 25rem;
+    height: 35rem;
+    background-color: #7C3AED;
+    border-radius: 40rem 0 0 40rem;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.3;
+  }
+}
+
 @media (max-width: 1024px) {
   .blurCircle {
     width: 300px;
@@ -463,9 +514,9 @@
   right: 0;
   top: 0;
   height: 100%;
-  /* width: 150px; Adjust based on how much overlap you want */
-  pointer-events: none;
-}
+  width: 150px; 
+   pointer-events: none;
+ } 
 
 .accentBar {
   position: absolute;
@@ -530,35 +581,57 @@
   .aboutSection {
     overflow-x: hidden;
   }
-  
+
   .leftPanel .flex.flex-col.w-150 {
     width: 100% !important;
     max-width: 500px;
   }
-  
+
   .rightPanel {
     margin-top: 2rem;
   }
-  
+
   .blurCircleLeft {
     left: -15rem;
     width: 25rem;
     height: 25rem;
   }
-  
+
   .blurCircleRight {
     right: -8rem;
     width: 20rem;
     height: 25rem;
   }
-  
-  .ring1 { width: 20rem; height: 20rem; }
-  .ring2 { width: 28rem; height: 28rem; }
-  .ring3 { width: 36rem; height: 36rem; }
-  .ring4 { width: 44rem; height: 44rem; }
-  
-  .accentBar { right: -60px; width: 80px; }
-  .accentBarLeft { left: -60px; width: 80px; }
+
+  .ring1 {
+    width: 20rem;
+    height: 20rem;
+  }
+
+  .ring2 {
+    width: 28rem;
+    height: 28rem;
+  }
+
+  .ring3 {
+    width: 36rem;
+    height: 36rem;
+  }
+
+  .ring4 {
+    width: 44rem;
+    height: 44rem;
+  }
+
+  .accentBar {
+    right: -60px;
+    width: 80px;
+  }
+
+  .accentBarLeft {
+    left: -60px;
+    width: 80px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -566,52 +639,76 @@
     flex-direction: column;
     gap: 1.5rem;
   }
-  
+
   .participantCard {
     max-width: 90%;
-    margin: 0 auto;
+    margin: 5px auto;
   }
-  
+
   .leftPanel .flex.flex-col.w-150 {
     padding: 0 1rem;
   }
-  
+
   .flex.justify-between.mt-6 {
     flex-direction: column;
     gap: 1rem;
     align-items: center;
   }
-  
+
   .astronautCenter {
     min-height: 20rem;
   }
-  
+
   .astronautRotatedMulti {
     width: 90%;
   }
-  
-  .ring1 { width: 10rem; height: 10rem; }
-  .ring2 { width: 14rem; height: 14rem; }
-  .ring3 { width: 18rem; height: 18rem; }
-  .ring4 { width: 22rem; height: 22rem; }
-  
+
+  .ring1 {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .ring2 {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .ring3 {
+    width: 18rem;
+    height: 18rem;
+  }
+
+  .ring4 {
+    width: 22rem;
+    height: 22rem;
+  }
+
   .blurCircleLeft {
     left: -10rem;
     width: 18rem;
     height: 18rem;
     filter: blur(40px);
   }
-  
+
   .blurCircleRight {
     right: -5rem;
     width: 15rem;
     height: 20rem;
     filter: blur(50px);
   }
-  
-  .accentBar { right: -40px; width: 60px; height: 60px; }
-  .accentBarLeft { left: -40px; width: 60px; height: 60px; }
-  
+
+  .accentBar {
+    right: -40px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .accentBarLeft {
+    left: -40px;
+    width: 60px;
+    height: 60px;
+  }
+
   .relative.bg-\[\.7c3aed\].w-full.lg\:w-auto.max-w-md.py-6.px-12.md\:px-20 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -622,16 +719,31 @@
   .description {
     font-size: 0.85rem;
   }
-  
-  .ring1 { width: 8rem; height: 8rem; }
-  .ring2 { width: 11rem; height: 11rem; }
-  .ring3 { width: 14rem; height: 14rem; }
-  .ring4 { width: 17rem; height: 17rem; }
-  
+
+  .ring1 {
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .ring2 {
+    width: 11rem;
+    height: 11rem;
+  }
+
+  .ring3 {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .ring4 {
+    width: 17rem;
+    height: 17rem;
+  }
+
   .text-white\/90.text-xl.leading-relaxed {
     font-size: 1rem;
   }
-  
+
   .text-white.text-xl.font-bold.mb-4 {
     font-size: 1.25rem;
   }
@@ -646,10 +758,75 @@
   will-change: box-shadow, border-color;
 }
 
-.blurCircleLeft, .blurCircleRight {
+.blurCircleLeft,
+.blurCircleRight {
   will-change: filter;
 }
 
 img {
   content-visibility: auto;
+}
+
+
+/* ========== RESPONSIVE FIXES FOR 1023px - 1270px ========== */
+/* This prevents right-side overflow and scales down inner content */
+
+@media (min-width: 1023px) and (max-width: 1275px) {
+  /* Reduce width of both card containers */
+  .cardContainerLeft,
+  .cardContainerRight {
+    max-width: 320px !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+
+  /* Reduce text sizes to fit better */
+  .cardContainerLeft h4,
+  .cardContainerRight h4 {
+    font-size: 1.125rem !important;
+    /* 18px instead of 20px */
+    margin-bottom: 0.5rem !important;
+  }
+
+  .cardContainerLeft p,
+  .cardContainerRight p {
+    font-size: 0.9375rem !important;
+    /* 15px instead of 20px */
+    line-height: 1.4 !important;
+  }
+
+  /* Reduce space between cards */
+  .spaceBetweenCards {
+    gap: 1rem !important;
+  }
+
+  /* Adjust accent bars position */
+  .accentContainer,
+  .accentContainerLeft {
+    width: 30px !important;
+  }
+
+  .accentBar,
+  .accentBarLeft {
+    position: absolute;
+    right: -95px;
+    width: 120px;
+    height: 66px;
+    background-color: #7c3aed;
+    /* border-left: 25px solid white; */
+    display: flex;
+    align-items: center;
+    z-index: 20;
+  }
+
+  /* Scale down astronaut container */
+  .astronautCenter {
+    transform: scale(0.85) !important;
+    margin: 0 -20px !important;
+  }
+
+  /* Reduce overall gap between columns */
+  .flexRowContainer {
+    gap: 1rem !important;
+  }
 }
