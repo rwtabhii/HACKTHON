@@ -4,8 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(45, 20, 80, 0.4); /* Dark purple transparent bg */
-    border: 1px solid rgba(138, 43, 226, 0.3); /* Subtle purple border */
+    background: rgba(45, 20, 80, 0.4);
+    border: 1px solid rgba(138, 43, 226, 0.3);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, border-color 0.3s ease;
@@ -16,22 +16,20 @@
     transform: translateY(-5px);
 }
 
-/* Optional: Adding a soft glow to the icon itself */
 .iconWrapper img {
     filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5));
 }
 
-/* Blur Circle */
+/* Blur Circle Container */
 .rightPanel {
-  position: relative;
-  z-index: 1;
-  /* optional: add slight padding to prevent circle from overlapping text awkwardly on small screens */
-  padding: 0.5rem 1rem;
+    position: relative;
+    z-index: 1;
+    padding: 0.5rem 1rem;
 }
 
-/* Blurred circle background – left side, circular format */
+/* Blurred circle background */
 .blurCircleRight {
-  position: absolute;
+    position: absolute;
     top: 50%;
     right: -6rem;
     transform: translateY(-50%);
@@ -45,21 +43,82 @@
     opacity: 0.3;
 }
 
-/* Responsive: smaller circle on tablets/mobiles */
+/* ========== RESPONSIVE FIXES (original UI preserved on desktop) ========== */
+
+/* Tablet */
 @media (max-width: 1024px) {
-  .blurCircle {
-    width: 300px;
-    height: 300px;
-    left: -80px;
-    filter: blur(50px);
-  }
+    .blurCircleRight {
+        width: 20rem;
+        height: 28rem;
+        right: -4rem;
+        filter: blur(60px);
+    }
+    
+    .iconWrapper {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .iconWrapper img {
+        width: 30px;
+        height: 30px;
+    }
 }
 
-@media (max-width: 640px) {
-  .blurCircle {
-    width: 220px;
-    height: 220px;
-    left: -60px;
-    filter: blur(40px);
-  }
+/* Mobile */
+@media (max-width: 768px) {
+    .rightPanel {
+        padding: 0.5rem;
+    }
+    
+    .blurCircleRight {
+        width: 15rem;
+        height: 22rem;
+        right: -3rem;
+        filter: blur(50px);
+        opacity: 0.2;
+    }
+    
+    .iconWrapper {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .iconWrapper img {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .blurCircleRight {
+        width: 12rem;
+        height: 18rem;
+        right: -2rem;
+        filter: blur(40px);
+    }
+    
+    .iconWrapper {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .iconWrapper img {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* ========== PERFORMANCE OPTIMIZATIONS ========== */
+.iconWrapper {
+    will-change: transform;
+}
+
+.blurCircleRight {
+    will-change: filter;
+}
+
+img {
+    content-visibility: auto;
 }

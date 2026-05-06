@@ -106,7 +106,7 @@ const About = () => {
                         </div>
 
                         {/* WHAT IS THE HACKATHON? section */}
-                        <div className="flex justify-around mt-30 border-2 border-amber-50">
+                        <div className="flex justify-around mt-30">
                             <div className={styles.leftPanel}>
                                 <div className={styles.blurCircleLeft} />
                                 <div className="flex flex-col w-150">

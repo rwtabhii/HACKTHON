@@ -1,22 +1,74 @@
 .brainSectionWrapper {
-  background-color: #000;
-  /* Add your brain image URL here */
-  background-image: url('../../assets/brainImg.svg'); 
-  background-repeat: no-repeat;
-  
-  /* 
-     Horizontal: center
-     Vertical: Adjust the percentage below to move the brain up or down.
-     Setting it to 50% puts it right at the junction of Rewards and FAQS.
-  */
-  background-position: center 50%; 
-  
-  /* Adjust this to make the brain bigger or smaller */
-  background-size: auto auto; 
   position: relative;
+  background-color: #000;
+  overflow-x: hidden; /* Prevents horizontal scroll on mobile */
 }
 
-/* Ensure sections are transparent so image shows through */
+/* Use pseudo-element for background image – better performance & control */
+.brainSectionWrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/brainImg.svg');
+  background-repeat: no-repeat;
+  background-position: center 50%;
+  background-size: contain; /* Scales to fit inside container without cropping */
+  pointer-events: none;     /* Allows clicks to pass through to sections */
+  z-index: 0;
+}
+
+/* Ensure sections are above the background */
 .brainSectionWrapper > section {
-  background: transparent !important;
+  position: relative;
+  z-index: 1;
+  background: transparent; /* No !important needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .brainSectionWrapper::before {
+    background-size: 80% auto; /* Smaller image on tablets/mobile */
+    background-position: center 40%; /* Shift up a bit */
+  }
+}
+
+@media (max-width: 480px) {
+  .brainSectionWrapper::before {
+    background-size: 100% auto; /* Fit width, but may crop top/bottom */
+    background-position: center 30%;
+  }
+}
+
+/* Optional: if SVG is heavy, add will-change for smoother scroll */
+.brainSectionWrapper::before {
+  will-change: transform; /* Hint to browser for optimization */
+}
+
+.brainSectionWrapper {
+  position: relative;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.brainBackgroundImage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+  max-width: 90%;
+  height: auto;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.8; /* optional */
+}
+
+@media (max-width: 768px) {
+  .brainBackgroundImage {
+    max-width: 100%;
+    top: 40%;
+  }
 }

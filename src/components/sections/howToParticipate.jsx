@@ -36,7 +36,7 @@ const steps = [
 
 const HowToParticipate = () => {
   return (
-    <section aria-labelledby="how-to-participate" className="py-16 px-4 bg-black text-white">
+    <section aria-labelledby="how-to-participate" className="py-16 px-4 bg-black text-white overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className={styles.rightPanel}>
           <div className={styles.blurCircleRight} />
@@ -44,17 +44,22 @@ const HowToParticipate = () => {
             How to Participate?
           </h2>
 
-          {/* Flexbox Container */}
+          {/* Flexbox Container - responsive already with flex-wrap */}
           <div className="flex flex-wrap justify-center gap-8 lg:justify-between items-start">
             {steps.map((step, index) => (
               <div key={index} className="flex flex-col items-center md:items-start max-w-50 text-center md:text-left">
 
-                {/* Icon Container with Module CSS */}
+                {/* Icon Container */}
                 <div className={`${styles.iconWrapper} mb-6`}>
-                  <img src={step.icon} alt={step.title} className="w-10 h-10 object-contain" />
+                  <img 
+                    src={step.icon} 
+                    alt={step.title} 
+                    className="w-10 h-10 object-contain"
+                    loading="lazy"
+                  />
                 </div>
 
-                <h3 className="text-lg  mb-3 leading-tight">
+                <h3 className="text-lg mb-3 leading-tight">
                   {step.title}
                 </h3>
                 <p className="text-gray-400 text-sm leading-relaxed">
