@@ -1,8 +1,32 @@
+import { useEffect } from 'react';
 import bg from "../../assets/heroBg.svg";
 import femaleIcon from "../../assets/heroIcon.svg";
 import CommonButton from "../common/commonButton";
 
 const Hero = () => {
+    // Preload critical images
+    useEffect(() => {
+        // Preload background image
+        const preloadBg = document.createElement('link');
+        preloadBg.rel = 'preload';
+        preloadBg.as = 'image';
+        preloadBg.href = bg;
+        document.head.appendChild(preloadBg);
+
+        // Preload female icon
+        const preloadIcon = document.createElement('link');
+        preloadIcon.rel = 'preload';
+        preloadIcon.as = 'image';
+        preloadIcon.href = femaleIcon;
+        document.head.appendChild(preloadIcon);
+
+        // Cleanup
+        return () => {
+            document.head.removeChild(preloadBg);
+            document.head.removeChild(preloadIcon);
+        };
+    }, []);
+
     return (
         <section className="relative w-full min-h-screen bg-black overflow-hidden">
             {/* Background image – optimized with will-change and reduced repaint */}
@@ -50,13 +74,16 @@ const Hero = () => {
                         FUTURE
                     </h1>
 
+                    {/* Optimized image with fetchpriority and better attributes */}
                     <img
                         src={femaleIcon}
                         alt="Hero visual"
                         className="w-48 sm:w-60 md:w-70 max-w-full h-auto object-contain relative z-30"
                         loading="eager"
+                        fetchpriority="high"
                         width="280"
-                        height="auto"
+                        height="280"
+                        decoding="async"
                     />
 
                     <p className="w-48 sm:w-60 md:w-70 font-satoshi text-white font-bold text-[0.7rem] leading-none tracking-[0.07em] uppercase mt-3 text-center">
