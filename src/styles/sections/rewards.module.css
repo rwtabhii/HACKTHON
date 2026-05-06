@@ -1,0 +1,43 @@
+.rewardCard {
+  width: 23rem; 
+  min-height: 15rem; 
+  
+  /* Rest of your styles */
+  background: linear-gradient(134.22deg,
+            rgba(255, 255, 255, 0.13) 2.6%,
+            rgba(255, 255, 255, 0.05) 100%);
+  border: 1px solid rgba(123, 97, 255, 0.3);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(12px);
+  
+  /* Flexbox inside the card helps align the text content */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.rewardCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(123, 97, 255, 0.6);
+}
+
+/* Blur Circle */
+
+.rewardCard::before {
+  content: "";
+  position: absolute;
+  width: 11em;
+  height: 9em;
+  top: 2%;
+  left: 9%;
+  transform: translate(-50%, -50%);
+  background: #7C3AED;
+  filter: blur(105px);
+  opacity: 0.7;
+  border-radius: 50%;
+
+  z-index: -1;
+
+  pointer-events: none;
+}

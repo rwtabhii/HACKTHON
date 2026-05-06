@@ -1,0 +1,22 @@
+.brainSectionWrapper {
+  background-color: #000;
+  /* Add your brain image URL here */
+  background-image: url('../../assets/brainImg.svg'); 
+  background-repeat: no-repeat;
+  
+  /* 
+     Horizontal: center
+     Vertical: Adjust the percentage below to move the brain up or down.
+     Setting it to 50% puts it right at the junction of Rewards and FAQS.
+  */
+  background-position: center 50%; 
+  
+  /* Adjust this to make the brain bigger or smaller */
+  background-size: auto auto; 
+  position: relative;
+}
+
+/* Ensure sections are transparent so image shows through */
+.brainSectionWrapper > section {
+  background: transparent !important;
+}

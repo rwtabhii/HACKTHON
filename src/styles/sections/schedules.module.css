@@ -1,0 +1,66 @@
+.scheduleItem {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.bar {
+  height: 12px;
+  width: 100%;
+  border: 1px solid #7b61ff;
+  position: relative; /* Required for the pseudo-element absolute positioning */
+  background-color: transparent;
+  margin: 1rem 0;
+  overflow: hidden; /* Clips the fill layer so it stays inside the border */
+}
+
+/* The "Fill" layer */
+.bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #7b61ff;
+  
+  /* Initial state: shrunk to nothing on the left */
+  transform: scaleX(0); 
+  transform-origin: left; 
+  
+  /* Cubic-bezier makes the "slide" feel more premium/organic */
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animation when hovering over the parent item */
+.scheduleItem:hover .bar::after {
+  transform: scaleX(1);
+}
+
+/* Force the fill to stay active for the current step */
+.activeBar::after {
+  transform: scaleX(1) !important;
+}
+
+.description {
+  color: #583ab4;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  min-height: 4rem; /* Keeps bars aligned horizontally */
+  white-space: pre-line;
+  transition: color 0.3s ease;
+}
+
+/* Optional: brighten text on hover to match the bar's energy */
+.scheduleItem:hover .description {
+  color: #6331f8;
+}
+.scheduleItem:hover .date{
+color: #ffff;
+}
+
+
+.date {
+  color: #aeaaaa;
+  font-weight: 500;
+  font-family: sans-serif;
+}

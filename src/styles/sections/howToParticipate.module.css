@@ -1,0 +1,65 @@
+.iconWrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(45, 20, 80, 0.4); /* Dark purple transparent bg */
+    border: 1px solid rgba(138, 43, 226, 0.3); /* Subtle purple border */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.iconWrapper:hover {
+    border-color: rgba(168, 85, 247, 1);
+    transform: translateY(-5px);
+}
+
+/* Optional: Adding a soft glow to the icon itself */
+.iconWrapper img {
+    filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5));
+}
+
+/* Blur Circle */
+.rightPanel {
+  position: relative;
+  z-index: 1;
+  /* optional: add slight padding to prevent circle from overlapping text awkwardly on small screens */
+  padding: 0.5rem 1rem;
+}
+
+/* Blurred circle background – left side, circular format */
+.blurCircleRight {
+  position: absolute;
+    top: 50%;
+    right: -6rem;
+    transform: translateY(-50%);
+    width: 25rem;
+    height: 35rem;
+    background-color: #7C3AED;
+    border-radius: 40rem 0 0 40rem;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Responsive: smaller circle on tablets/mobiles */
+@media (max-width: 1024px) {
+  .blurCircle {
+    width: 300px;
+    height: 300px;
+    left: -80px;
+    filter: blur(50px);
+  }
+}
+
+@media (max-width: 640px) {
+  .blurCircle {
+    width: 220px;
+    height: 220px;
+    left: -60px;
+    filter: blur(40px);
+  }
+}

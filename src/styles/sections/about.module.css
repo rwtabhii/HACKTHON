@@ -1,0 +1,524 @@
+/* about.module.css – for custom backgrounds, future blur, etc. */
+
+.aboutSection {
+  background-color: black;
+  position: relative;
+
+
+}
+
+/* Optional: Add a subtle gradient overlay (you can replace with blur later) */
+.aboutSection::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.15), transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure all direct children are above the overlay */
+.aboutSection>div {
+  position: relative;
+  z-index: 1;
+}
+
+/* Pattern Print */
+.participateRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+
+}
+
+.textWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.description {
+  max-width: 760px;
+  width: 100%;
+  text-align: center;
+  color: #d1d5db;
+  line-height: 1.8;
+  font-size: 1rem;
+  padding: 0 1rem;
+}
+
+/* Mirror Right Pattern */
+.rightPattern {
+  transform: scaleX(-1);
+}
+
+/* Decorative Pattern */
+.pattern {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+}
+
+.pattern span {
+  position: absolute;
+  height: 40px;
+  background: #7c3aed;
+}
+
+.pattern span:nth-child(1) {
+  width: 90px;
+  top: 0;
+  left: 0;
+}
+
+.pattern span:nth-child(2) {
+  width: 90px;
+  top: 80px;
+  left: 0;
+}
+
+.pattern span:nth-child(3) {
+  width: 90px;
+  top: 160px;
+  left: 0;
+}
+
+.pattern span:nth-child(4) {
+  width: 140px;
+  top: 40px;
+  left: 90px;
+}
+
+.pattern span:nth-child(5) {
+  width: 140px;
+  top: 120px;
+  left: 90px;
+}
+
+/* TABLET */
+@media (max-width: 1024px) {
+  .pattern {
+    width: 160px;
+    height: 160px;
+    transform-origin: center;
+    scale: 0.8;
+  }
+
+  .description {
+    max-width: 600px;
+    font-size: 0.95rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .participateRow {
+    justify-content: center;
+  }
+
+  .pattern {
+    display: none;
+  }
+
+  .description {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    padding: 0;
+  }
+}
+
+/* Participant Card CSS */
+.participantCard {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+
+  width: 100%;
+  max-width: 20rem;
+  min-height: 8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  border-radius: 24px;
+  border: 2px solid rgba(124, 58, 237, 0.7);
+
+  background: linear-gradient(134.22deg,
+      rgba(255, 255, 255, 0.13) 2.6%,
+      rgba(255, 255, 255, 0.05) 100%);
+
+  backdrop-filter: blur(152px);
+  -webkit-backdrop-filter: blur(152px);
+
+  box-shadow:
+    inset 0 0 40px rgba(124, 58, 237, 0.08),
+    0 0 40px rgba(124, 58, 237, 0.12);
+}
+
+/* Glow Behind Card */
+.participantCard::before {
+  content: "";
+  position: absolute;
+  width: 11em;
+  height: 9em;
+  top: 2%;
+  left: 9%;
+  transform: translate(-50%, -50%);
+  background: #7C3AED;
+  filter: blur(105px);
+  opacity: 0.7;
+  border-radius: 50%;
+
+  z-index: -1;
+
+  pointer-events: none;
+}
+
+/* Ensure Text Stays Above */
+.participantCard h4 {
+  position: relative;
+  z-index: 2;
+}
+
+.countdown {
+  background: linear-gradient(134.22deg,
+      rgba(255, 255, 255, 0.13) 2.6%,
+      rgba(255, 255, 255, 0.05) 100%);
+  border: none;
+  backdrop-filter: blur(152px);
+  -webkit-backdrop-filter: blur(152px);
+  box-shadow:
+    inset 0 0 40px rgba(124, 58, 237, 0.08),
+    0 0 40px rgba(124, 58, 237, 0.12);
+}
+
+.register {
+  background: linear-gradient(135deg, rgba(123, 97, 255, 0.5) 0%, rgba(123, 97, 255, 0.2) 100%);
+}
+
+/* ====Left Circle Blur on What is hackthon ==== */
+.leftPanel {
+  position: relative;
+  z-index: 1;
+  /* optional: add slight padding to prevent circle from overlapping text awkwardly on small screens */
+  padding: 0.5rem 1rem;
+}
+
+/* Blurred circle background – left side, circular format */
+.blurCircleLeft {
+  position: absolute;
+  top: 17%;
+  left: -25rem;
+  transform: translateY(-50%);
+  width: 38rem;
+  height: 31rem;
+ background-color: #7C3AED;
+  filter: blur(60px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.3;
+  border-radius: 50%;
+}
+
+/* Responsive: smaller circle on tablets/mobiles */
+@media (max-width: 1024px) {
+  .blurCircle {
+    width: 300px;
+    height: 300px;
+    left: -80px;
+    filter: blur(50px);
+  }
+}
+
+@media (max-width: 640px) {
+  .blurCircle {
+    width: 220px;
+    height: 220px;
+    left: -60px;
+    filter: blur(40px);
+  }
+}
+
+/* Optional: add a subtle text shadow to headings for better readability over the glow */
+.leftPanel h3 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.leftPanel p {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/*==== Right Circle==== */
+.rightPanel {
+  position: relative;
+  z-index: 1;
+  /* optional: add slight padding to prevent circle from overlapping text awkwardly on small screens */
+  padding: 0.5rem 1rem;
+}
+
+/* Blurred circle background – left side, circular format */
+.blurCircleRight {
+  position: absolute;
+    top: 50%;
+    right: -5rem;
+    transform: translateY(-50%);
+    width: 25rem;
+    height: 35rem;
+    background-color: #7C3AED;
+    border-radius: 40rem 0 0 40rem;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+/* Responsive: smaller circle on tablets/mobiles */
+@media (max-width: 1024px) {
+  .blurCircle {
+    width: 300px;
+    height: 300px;
+    left: -80px;
+    filter: blur(50px);
+  }
+}
+
+@media (max-width: 640px) {
+  .blurCircle {
+    width: 220px;
+    height: 220px;
+    left: -60px;
+    filter: blur(40px);
+  }
+}
+
+/* Optional: add a subtle text shadow to headings for better readability over the glow */
+.rightPanel h3 {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.rightPanel p {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ===  ASTRONAUT === */
+.astronautCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  min-height: 30rem;
+}
+
+.floatGroup {
+  animation: floatUpDown 4s ease-in-out infinite;
+}
+
+.astronautRotatedMulti {
+  position: relative;
+  transform: rotate(10deg);
+  transition: transform 0.2s ease;
+  z-index: 10;
+  display: inline-block;
+  width: 40rem;
+}
+
+.astronautImgMulti {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.6));
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-18px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* === RINGS WITH GLOW EFFECT (no spinning) === */
+.astronautMultiRingContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.ringBase {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 2px solid rgba(139, 92, 246, 0.6);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.03) 0%, rgba(0, 0, 0, 0) 80%);
+  background: transparent;
+  pointer-events: none;
+  animation: glowPulse 7s ease-in-out infinite;
+}
+
+/* Different delays so they pulse one after another (optional) */
+.ring1 {
+  width: 30rem;
+  height: 30rem;
+  animation-delay: 0s;
+  opacity: 0.7;
+}
+
+.ring2 {
+  width: 45rem;
+  height: 45rem;
+  border-color: rgba(168, 85, 247, 0.5);
+  animation-delay: 0.3s;
+  opacity: 0.7;
+}
+
+.ring3 {
+  width: 60rem;
+  height: 60rem;
+  border-color: rgba(139, 92, 246, 0.4);
+  animation-delay: 0.6s;
+  opacity: 0.5;
+}
+
+.ring4 {
+  width: 75rem;
+  height: 75rem;
+  border-color: rgba(192, 132, 252, 0.35);
+  animation-delay: 0.9s;
+  opacity: 0.3;
+}
+
+
+/* Glow pulse: grows shadow and border brightness from inside to outside */
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.2), inset 0 0 3px rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.4);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.7), inset 0 0 15px rgba(139, 92, 246, 0.3);
+    border-color: rgba(168, 85, 247, 0.9);
+  }
+
+  100% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.2), inset 0 0 3px rgba(139, 92, 246, 0.1);
+    border-color: rgba(139, 92, 246, 0.4);
+  }
+}
+
+/* OPTIONAL: If you want the rings to also float up-down slightly (slower than astronaut) */
+/* Uncomment the line below to add a gentle vertical movement */
+/*
+.ringBase {
+  animation: glowPulse 3s ease-in-out infinite, ringFloat 6s ease-in-out infinite;
+}
+
+@keyframes ringFloat {
+  0% { transform: translate(-50%, -50%) translateY(0px); }
+  50% { transform: translate(-50%, -50%) translateY(-8px); }
+  100% { transform: translate(-50%, -50%) translateY(0px); }
+}
+*/
+
+/* Responsive: shrink rings on smaller screens */
+@media (max-width: 768px) {
+  .ring1 {
+    width: 140px;
+    height: 140px;
+  }
+
+  .ring2 {
+    width: 180px;
+    height: 180px;
+  }
+
+  .ring3 {
+    width: 220px;
+    height: 220px;
+  }
+
+  .ring4 {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+.accentContainer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  /* width: 150px; Adjust based on how much overlap you want */
+  pointer-events: none;
+}
+
+.accentBar {
+  position: absolute;
+  right: -95px;
+  /* Pushes it slightly off the edge */
+  width: 120px;
+  height: 80px;
+  background-color: #7c3aed;
+  /* Matches main purple */
+  border-left: 25px solid white;
+  /* The white "cut-out" effect */
+  display: flex;
+  align-items: center;
+  z-index: 20;
+}
+
+/* Optional: Add the subtle background curves seen in your image */
+.accentContainer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+/* Right Side one */
+.accentContainerLeft {
+  position: absolute;
+  left: 0;
+  /* Anchored to the left now */
+  top: 0;
+  height: 100%;
+  /* width: 150px; */
+  pointer-events: none;
+}
+
+.accentBarLeft {
+  position: absolute;
+  /* Push it left so the purple part is outside, 
+     but the white border stays inside */
+  left: -94px;
+  width: 120px;
+  height: 80px;
+  background-color: #7c3aed;
+
+
+  border-right: 25px solid white;
+
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}

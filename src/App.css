@@ -1,0 +1,33 @@
+/* App.css - global styles including Tailwind + custom additions */
+
+@import "tailwindcss";
+
+/* Custom styles used by Navbar (hamburger icon lines) */
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: #1e293b;
+  display: block;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Optional: smooth overlay transitions for Hero */
+.hero-bg-overlay {
+  transition: opacity 0.5s ease;
+}
+
+/* Additional custom underline animation (if needed) */
+.hover-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+  transition: width 0.3s ease;
+}
+.hover-underline:hover::after {
+  width: 100%;
+}
