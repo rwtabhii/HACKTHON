@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../../styles/sections/HowToParticipate.module.css";
+import styles from "../../styles/sections/howToParticipate.module.css"
 import edit from "../../assets/edit.svg";
 import group from "../../assets/group.svg";
 import idea from "../../assets/idea.svg";
