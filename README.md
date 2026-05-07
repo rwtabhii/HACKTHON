@@ -1,4 +1,4 @@
-# 🚀 StoreFleet App – Innovation Hackathon 2026 Landing Page
+# 🚀 HACKTHON App – Innovation Hackathon 2026 Landing Page
 
 A modern, responsive, and visually engaging hackathon landing page built using **React**, **Tailwind CSS**, **HTML**, **CSS**, and **JavaScript**.  
 This project features animated UI elements, a floating astronaut illustration, countdown timer, smooth hover effects, and fully responsive layouts optimized for all screen sizes.
