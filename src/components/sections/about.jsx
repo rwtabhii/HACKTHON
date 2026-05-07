@@ -115,7 +115,7 @@ const About = () => {
                                         The Lorem Ipsum Innovation Hackathon is a flagship event crafted to uncover pioneering ideas in science, technology, and system design. As technological advancements accelerate globally, this initiative aims to bridge academic knowledge with practical implementation.
                                     </p>
 
-                                    <p className="text-white text-base sm:text-lg leading-relaxed mt-4 mb-20 break-words sm:break-words">
+                                    <p className="text-white text-base sm:text-lg leading-relaxed mt-4 mb-20 wrap-break-words sm:wrap-break-words">
                                         Participants will work on challenge statements designed by leading R&D units, applying theoretical expertise to build innovative prototypes and solutions with potential real-world application.
                                     </p>
                                     <p className="text-white text-base sm:text-lg leading-relaxed tracking-wide">Submission Closing In:</p>
