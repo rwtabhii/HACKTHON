@@ -22,7 +22,7 @@ The project features animated UI elements, floating astronaut illustrations, cou
 
 🔗 Live Website: https://hackthon-fii2.onrender.com/
 
-🔗 GitHub Repository: https://github.com/rwtabhii/StoreFleet-App.git
+🔗 GitHub Repository: https://github.com/rwtabhii/HACKTHON.git
 
 ---
 
