@@ -1,7 +1,20 @@
-# 🚀 HACKTHON App – Innovation Hackathon 2026 Landing Page
+# 🚀 HACKTHON – Innovation Hackathon 2026 Landing Page
 
-A modern, responsive, and visually engaging hackathon landing page built using **React**, **Tailwind CSS**, **HTML**, **CSS**, and **JavaScript**.  
-This project features animated UI elements, a floating astronaut illustration, countdown timer, smooth hover effects, and fully responsive layouts optimized for all screen sizes.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-0F172A?style=for-the-badge&logo=tailwind-css)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite)
+
+A modern, responsive, and visually engaging hackathon landing page UI developed for the **H2S Company Hackathon Event** using **React**, **Tailwind CSS**, **HTML**, **CSS**, and **JavaScript**.
+
+The platform is designed to provide participants with complete hackathon information through an interactive and user-friendly interface. It includes dedicated sections for:
+- 🚀 About the Hackathon
+- 🛠 How to Participate
+- 🧩 Challenges
+- 📅 Event Schedules
+- 🏆 Rewards & Prizes
+- ❓ Frequently Asked Questions (FAQs)
+
+The project features animated UI elements, floating astronaut illustrations, countdown timers, smooth hover interactions, glassmorphism-inspired cards, and fully responsive layouts optimized across mobile, tablet, and desktop devices.
 
 ---
 
@@ -162,6 +175,32 @@ HACKTHON/
 
 
 ---
+
+
+# 📁 Folder Structure Explanation
+
+| Folder/File | Description |
+|-------------|-------------|
+| `public/` | Stores static public assets accessible directly by the browser. |
+| `src/` | Main source folder containing all application code. |
+| `src/assets/` | Contains all images, SVGs, icons, illustrations, and challenge images used throughout the application. |
+| `src/components/` | Reusable UI components used across different sections of the website. |
+| `src/components/common/` | Shared reusable components like buttons, cards, and schedule items. |
+| `src/components/layout/` | Layout-related components such as Navbar, Footer, and ScrollToTop functionality. |
+| `src/components/sections/` | Main landing page sections like Hero, About, Challenges, Rewards, FAQs, etc. |
+| `src/pages/` | Contains top-level application pages such as HomePage. |
+| `src/styles/` | Stores CSS Modules and styling files for pages and sections. |
+| `src/styles/pages/` | Page-specific CSS module files. |
+| `src/styles/sections/` | Section-specific CSS module files for better styling organization. |
+| `App.jsx` | Root React component that renders the application structure. |
+| `main.jsx` | Entry point of the React application. |
+| `index.css` | Global styles and Tailwind imports. |
+| `App.css` | Additional application-level styles. |
+| `package.json` | Contains project dependencies, scripts, and metadata. |
+| `vite.config.js` | Configuration file for the Vite build tool. |
+| `eslint.config.js` | ESLint configuration for maintaining code quality. |
+| `.gitignore` | Specifies files and folders ignored by Git. |
+| `README.md` | Documentation file containing project overview and setup instructions. |
 
 # ⚙️ Installation & Setup
 
